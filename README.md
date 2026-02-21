@@ -32,9 +32,9 @@ This project was created as part of an assignment to demonstrate Django fundamen
 
 ```
 mooc/
- ├ courses/          # App with models, views, urls
- ├ mooc/             # Project settings
- ├ templates/        # HTML templates
+ ├ courses/          
+ ├ mooc/
+ ├ templates/        
  ├ Dockerfile
  ├ docker-compose.yml
  ├ requirements.txt
@@ -48,7 +48,7 @@ mooc/
 ### 1️⃣ Clone the repository
 
 ```
-git clone 
+git clone https://github.com/Arul0320/Mooc.git
 cd mooc
 ```
 
@@ -151,7 +151,3 @@ From admin you can:
 Python Developer
 
 ---
-
-## 📜 License
-
-This project is for educational/demo purposes.

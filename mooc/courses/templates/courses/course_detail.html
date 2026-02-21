@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h2>{{course.title}}</h2>
+    <p>{{course.description}}</p>
+
+    {% if not user.is_authenticated %}
+      <div class="alert alert-warning">Log in to enroll</div>
+    {% elif not is_enrolled %}
+      <a href="/courses/{{course.id}}/enroll/" class="btn btn-success">Enroll</a>
+    {% else %}
+      <div class="alert alert-success">You are enrolled</div>
+    {% endif %}
+  </div>
+</div>
+
+<h4 class="mt-4">Lessons</h4>
+
+<ul class="list-group">
+{% for lesson in lessons %}
+  <li class="list-group-item d-flex justify-content-between">
+    <a href="/lessons/{{lesson.id}}/">{{lesson.title}}</a>
+    {% if lesson.id in progress %}
+      <span class="badge bg-success">Completed</span>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+<a href="/my-courses" class="btn btn-secondary">Back to Courses</a>
+{% endblock %}
